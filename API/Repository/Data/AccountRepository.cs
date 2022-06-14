@@ -45,6 +45,14 @@ namespace API.Repository.Data
                             where e.Email == loginVM.Email
                             select a.Password).FirstOrDefault();
 
+            // lazy loading -> aplikasinya jd lebih berat
+            // cek lazy loading, pas ngisi
+            var employee = (from e in myContext.Employees
+                            where e.Email == loginVM.Email
+                            select e).FirstOrDefault();
+
+            var objek = employee.Account.OTP;
+
             // cek kecocokan password dan hash passwordnya
             var cekPassword = ValidatePassword(loginVM.Password, password);
 

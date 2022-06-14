@@ -9,6 +9,11 @@ namespace API.Models
 {
     public class Account
     {
+        public Account()
+        {
+            AccountRole = new HashSet<AccountRole>();
+        }
+
         [Key]
         [ForeignKey("Employee")]
         [Required]
@@ -23,11 +28,11 @@ namespace API.Models
 
         public DateTime? ExpiredTime { get; set; }
 
-        public Employee Employee { get; set; }
+        public virtual Employee Employee { get; set; }
 
-        public Profiling Profiling { get; set; }
+        public virtual Profiling Profiling { get; set; }
 
-        public ICollection<AccountRole> AccountRole { get; set; }
+        public virtual ICollection<AccountRole> AccountRole { get; set; }
     }
 }
 

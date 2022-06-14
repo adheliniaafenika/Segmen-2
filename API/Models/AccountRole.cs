@@ -15,8 +15,8 @@ namespace API.Models
         //[ForeignKey("Role")]
         public int Role_Id { get; set; }
 
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
 
-        public Account Account { get; set; }
+        public virtual Account Account { get; set; }
     }
 }

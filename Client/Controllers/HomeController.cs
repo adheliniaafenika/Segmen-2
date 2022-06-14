@@ -23,6 +23,11 @@ namespace Client.Controllers
             return View();
         }
 
+        public IActionResult Latihan()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

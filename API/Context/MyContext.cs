@@ -14,6 +14,14 @@ namespace API.Context
 
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder obj)
+        {
+            if (!obj.IsConfigured)
+            {
+                obj.UseLazyLoadingProxies();
+            }
+        }
+
         public DbSet<Models.Employee> Employees { get; set; }
         public DbSet<Models.University> Universities { get; set; }
         public DbSet<Models.Education> Educations { get; set; }

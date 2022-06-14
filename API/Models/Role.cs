@@ -8,12 +8,17 @@ namespace API.Models
 {
     public class Role
     {
+        public Role()
+        {
+            AccountRole = new HashSet<AccountRole>();
+        }
+
         [Key]
         [Required]
         public int ID { get; set; }
 
         public string Nama { get; set; }
 
-        public ICollection<AccountRole> AccountRole { get; set; }
+        public virtual ICollection<AccountRole> AccountRole { get; set; }
     }
 }

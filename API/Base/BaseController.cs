@@ -78,7 +78,7 @@ namespace API.Base
             }
         }
 
-        [HttpGet("{key}")]
+        [HttpGet("GetById/{key}")]
         public ActionResult<Entity> Get(Key key)
         {
             var hasil = repository.Get(key);

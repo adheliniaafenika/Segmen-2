@@ -28,9 +28,9 @@ namespace API.Models
 
         public Boolean isDeleted { get; set; }
         
-        public Gender Gender { get; set; }
+        public virtual Gender Gender { get; set; }
 
-        public Account Account { get; set; }
+        public virtual Account Account { get; set; }
 
     }
 

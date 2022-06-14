@@ -42,15 +42,6 @@ namespace API.Controllers
             // melihat kecocokan password di vm dgn db
             var cekPassword = accountRepository.ValidasiPassword(loginVM);
 
-            //if (cekPassword == true)
-            //{
-            //    return StatusCode(200, new { status = HttpStatusCode.OK, message = "Login Berhasil" });
-            //}
-            //else
-            //{
-            //    return StatusCode(400, new { status = HttpStatusCode.BadRequest, message = "Password tidak sesuai" });
-            //}
-
             if (cekPassword == false)
             {
                 return StatusCode(400, new { status = HttpStatusCode.BadRequest, message = "Password tidak sesuai" });
